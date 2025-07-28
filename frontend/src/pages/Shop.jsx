@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'; // Added ChevronUp, Heart, ShoppingCart
 // import { toast } from 'react-hot-toast';
 import FilterModal from '../components/FilterModal';
-import Hero1 from '../images/Hero1.png'; // Assuming your hero image path
+// import Hero1 from '../images/Hero1.png'; // Assuming your hero image path
 import whatsapp from '../images/whatsapp.png'; // Assuming your whatsapp icon path
 
 const ITEMS_PER_PAGE = 12; // Define how many items to load per click for both products and collections
@@ -380,7 +380,7 @@ const Shop = () => {
   return (
     <div className="">
       <div className="relative">
-        <img src={Hero1} alt="Shop Hero" className="object-cover h-50 w-full" />
+        <img src={'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726979/Hero1_btyphr.jpg'} alt="Shop Hero" className="object-cover h-50 w-full" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
           <h1 className="absolute bottom-15 left-1/2 -translate-x-1/2 mt-20 mb-2 text-5xl font-bold text-center text-base-100 font-[poppins]">
             Shop

@@ -23,10 +23,10 @@ import antique from '../images/antique.jpeg';
 import bespoke from '../images/bespoke.jpeg';
 import minimalist from '../images/minimalist.jpeg';
 // import kitchen from '../images/kitchen.jpeg';
-import home from '../images/home.jpeg';
-import office from '../images/office.jpg';
-import carbinets from '../images/carbinets.jpeg';
-import interior from '../images/interior.jpg';
+// import home from '../images/home.jpeg';
+// import office from '../images/office.jpg';
+// import carbinets from '../images/carbinets.jpeg';
+// import interior from '../images/interior.jpg';
 import toast from 'react-hot-toast';
 import { axiosInstance } from '../lib/axios';
 import { useProductsStore } from '../store/useProductsStore';
@@ -36,7 +36,14 @@ import { useAuthStore } from '../store/useAuthStore';
 
 const HomePage = () => {
   // Array of hero images
-  const heroImages = ["https://res.cloudinary.com/dqe64m85c/image/upload/v1753726979/Hero1_btyphr.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726810/Hero2_txhvzy.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726811/Hero3_sdnk2c.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726811/Hero4_pxtqll.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726804/Hero5_dphmig.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726982/Hero6_o9jnqk.jpg"];
+  const heroImages = [
+    'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726979/Hero1_btyphr.jpg',
+    'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726810/Hero2_txhvzy.jpg',
+    'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726811/Hero3_sdnk2c.jpg',
+    'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726811/Hero4_pxtqll.jpg',
+    'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726804/Hero5_dphmig.jpg',
+    'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726982/Hero6_o9jnqk.jpg',
+  ];
   const [currentSlide, setCurrentSlide] = useState(0); // State to track the current slide index
   const slideIntervalTime = 5000; // Time in milliseconds for automatic slide transition (5 seconds)
 
@@ -804,7 +811,7 @@ const HomePage = () => {
             {' '}
             {/* Added bottom margin for mobile, removed for desktop */}
             <img
-              src={home} // Use the imported image
+              src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753727796/home_cbpusd.jpg"} // Use the imported image
               alt="Luxurious Living Room"
               className="w-full h-full rounded-lg object-cover" // Added rounded corners and shadow
             />
@@ -861,7 +868,7 @@ const HomePage = () => {
           {/* 🟩 IMAGE SECTION (comes first on mobile, second on desktop) */}
           <div className="md:flex-1 h-70 lg:h-100 mb-6 md:mb-0">
             <img
-              src={interior}
+              src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753728075/0339d51a-ea31-4b76-9a8f-f56d20de75ee_exnszd.jpg"}
               alt="Luxurious Living Room"
               className="w-full h-full rounded-lg object-cover"
             />
@@ -876,7 +883,7 @@ const HomePage = () => {
             {' '}
             {/* Added bottom margin for mobile, removed for desktop */}
             <img
-              src={office} // Use the imported image
+              src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753728078/From_Chaos_To_Calm__How_To_Design_A_Minimalist_sd2pdx.jpg"} // Use the imported image
               alt="Luxurious Living Room"
               className="w-full h-full rounded-lg object-cover" // Added rounded corners and shadow
             />
@@ -933,7 +940,7 @@ const HomePage = () => {
           {/* 🟩 IMAGE SECTION (comes first on mobile, second on desktop) */}
           <div className="md:flex-1 h-70 lg:h-100 mb-6 md:mb-0">
             <img
-              src={carbinets}
+              src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753727847/carbinets_kinrvk.jpg"}
               alt="Luxurious Living Room"
               className="w-full h-full rounded-lg object-cover"
             />

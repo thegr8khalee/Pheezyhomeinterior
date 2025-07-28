@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero1 from '../images/Hero1.png';
+// import Hero1 from '../images/Hero1.png';
 import Catalog1 from '../images/PheezCatalog.png';
 // import Catalog2 from '../images/Catalog2.png';
 // import Catalog3 from '../images/catalog3.png';
@@ -12,7 +12,7 @@ const ECatalog = () => {
   return (
     <div className="pt-16">
       <div className="relative">
-        <img src={Hero1} alt="" className="object-cover h-40 w-full" />
+        <img src={'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726979/Hero1_btyphr.jpg'} alt="" className="object-cover h-40 w-full" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
           <h1 className="absolute bottom-14 left-1/2 -translate-x-1/2 mt-20 w-full mb-2 text-3xl font-bold text-center text-base-100 font-[poppins]">
             E-Catalog

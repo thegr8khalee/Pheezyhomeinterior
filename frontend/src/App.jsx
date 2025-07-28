@@ -34,7 +34,7 @@ import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
 import ECatalog from './pages/ECatalog';
-import Showroom from './pages/Showroom';
+// import Showroom from './pages/Showroom';
 import CookieConsentBanner from './components/CookieConsentBanner';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 
@@ -103,7 +103,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/e-catalog" element={<ECatalog />} />
-          <Route path="/showroom" element={<Showroom />} />
+          {/* <Route path="/showroom" element={<Showroom />} /> */}
           <Route
             path="/reset-password/:token"
             element={<ResetPasswordPage />}

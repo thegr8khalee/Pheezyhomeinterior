@@ -3,7 +3,7 @@ import React, { useState } from 'react'; // Import useState
 import { Loader2 } from 'lucide-react'; // Import Loader2 for loading state
 import { toast } from 'react-hot-toast'; // Import toast for notifications
 import { axiosInstance } from '../lib/axios.js'; // Your configured Axios instance
-import Hero1 from '../images/Hero1.png';
+// import Hero1 from '../images/Hero1.png';
 import whatsapp from '../images/whatsapp_4401461.png'; // Assuming correct path
 import ig from '../images/ig.png';
 // import tiktok from '../images/tik-tok_4782345 (1).png';
@@ -49,7 +49,7 @@ const Contact = () => {
     <div className="pt-16">
       <div className="relative">
         <img
-          src={Hero1}
+          src={'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726979/Hero1_btyphr.jpg'}
           alt="Contact Hero"
           className="object-cover h-40 w-full"
         />

@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import FilterModal from '../components/FilterModal';
 import { useProductsStore } from '../store/useProductsStore';
-import Hero1 from '../images/Hero1.png';
+// import Hero1 from '../images/Hero1.png';
 import whatsapp from '../images/whatsapp.png';
 import { useCollectionStore } from '../store/useCollectionStore';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -389,7 +389,7 @@ const Styles = () => {
   return (
     <div className="">
       <div className="relative">
-        <img src={Hero1} alt="Shop Hero" className="object-cover h-50 w-full" />
+        <img src={'https://res.cloudinary.com/dqe64m85c/image/upload/v1753726979/Hero1_btyphr.jpg'} alt="Shop Hero" className="object-cover h-50 w-full" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
           <h1 className="absolute bottom-15 left-1/2 -translate-x-1/2 mt-20 mb-2 text-4xl font-bold text-center text-base-100 font-[poppins]">
             {style
