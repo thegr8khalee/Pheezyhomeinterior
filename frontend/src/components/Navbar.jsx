@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import LogoLightMode from '../images/LogoLightMode.png';
+import LogoLightMode from '../images/logoLightMode.png';
 
 import { useAuthStore } from '../store/useAuthStore';
 import { useAdminStore } from '../store/useAdminStore';
