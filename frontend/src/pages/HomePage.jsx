@@ -33,40 +33,6 @@ import { useProductsStore } from '../store/useProductsStore';
 import { useCollectionStore } from '../store/useCollectionStore';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/useAuthStore';
-import project1 from '../images/project1.jpg';
-import project2 from '../images/project2.jpg';
-import project3 from '../images/project3.jpg';
-import project4 from '../images/project4.jpg';
-import project5 from '../images/project5.jpg';
-import project6 from '../images/project6.jpg';
-import project7 from '../images/project7.jpg';
-import project8 from '../images/project8.jpg';
-import project9 from '../images/project9.png';
-import project10 from '../images/project10.jpg';
-import project11 from '../images/project11.png';
-import project12 from '../images/project12.jpg';
-import project13 from '../images/project13.png';
-import project14 from '../images/project14.jpg';
-import project15 from '../images/project15.png';
-import project16 from '../images/project16.jpg';
-import project17 from '../images/project17.png';
-import project18 from '../images/project18.jpg';
-import project19 from '../images/project19.png';
-import project20 from '../images/project20.jpg';
-import project21 from '../images/project21.png';
-import project22 from '../images/project22.jpg';
-import project23 from '../images/project23.png';
-import project24 from '../images/project24.jpg';
-import project25 from '../images/project25.png';
-import project26 from '../images/project26.jpg';
-import project27 from '../images/project27.png';
-import project28 from '../images/project28.jpg';
-import project29 from '../images/project29.png';
-import project30 from '../images/project30.jpg';
-import project31 from '../images/project31.png';
-import project32 from '../images/project32.jpg';
-import project33 from '../images/project33.png';
-import project34 from '../images/project34.png';
 
 const HomePage = () => {
   // Array of hero images
@@ -134,42 +100,205 @@ const HomePage = () => {
   ];
 
   const projects = [
-  { id: 1, name: 'Project 1', image: project1 },
-  { id: 2, name: 'Project 2', image: project2 },
-  { id: 3, name: 'Project 3', image: project3 },
-  { id: 4, name: 'Project 4', image: project4 },
-  { id: 5, name: 'Project 5', image: project5 },
-  { id: 6, name: 'Project 6', image: project6 },
-  { id: 7, name: 'Project 7', image: project7 },
-  { id: 8, name: 'Project 8', image: project8 },
-  { id: 9, name: 'Project 9', image: project9 },
-  { id: 10, name: 'Project 10', image: project10 },
-  { id: 11, name: 'Project 11', image: project11 },
-  { id: 12, name: 'Project 12', image: project12 },
-  { id: 13, name: 'Project 13', image: project13 },
-  { id: 14, name: 'Project 14', image: project14 },
-  { id: 15, name: 'Project 15', image: project15 },
-  { id: 16, name: 'Project 16', image: project16 },
-  { id: 17, name: 'Project 17', image: project17 },
-  { id: 18, name: 'Project 18', image: project18 },
-  { id: 19, name: 'Project 19', image: project19 },
-  { id: 20, name: 'Project 20', image: project20 },
-  { id: 21, name: 'Project 21', image: project21 },
-  { id: 22, name: 'Project 22', image: project22 },
-  { id: 23, name: 'Project 23', image: project23 },
-  { id: 24, name: 'Project 24', image: project24 },
-  { id: 25, name: 'Project 25', image: project25 },
-  { id: 26, name: 'Project 26', image: project26 },
-  { id: 27, name: 'Project 27', image: project27 },
-  { id: 28, name: 'Project 28', image: project28 },
-  { id: 29, name: 'Project 29', image: project29 },
-  { id: 30, name: 'Project 30', image: project30 },
-  { id: 31, name: 'Project 31', image: project31 },
-  { id: 32, name: 'Project 32', image: project32 },
-  { id: 33, name: 'Project 33', image: project33 },
-  { id: 34, name: 'Project 34', image: project34 },
-];
-
+    {
+      id: 1,
+      name: 'Project 1',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725614/Screenshot_20250728-190635_2_kiu2b3.png',
+    },
+    {
+      id: 2,
+      name: 'Project 2',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725613/Screenshot_20250728-190616_2_nsuxs0.png',
+    },
+    {
+      id: 3,
+      name: 'Project 3',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725613/Screenshot_20250728-190533_2_igxzjn.png',
+    },
+    {
+      id: 4,
+      name: 'Project 4',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725611/Screenshot_20250728-190500_2_mhm33e.png',
+    },
+    {
+      id: 5,
+      name: 'Project 5',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725610/Screenshot_20250728-190436_2_mhlvtj.png',
+    },
+    {
+      id: 6,
+      name: 'Project 6',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725609/IMG-20250728-WA0032_z1ybda.jpg',
+    },
+    {
+      id: 7,
+      name: 'Project 7',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725609/Screenshot_20250728-185739_3_ugjzlk.jpg',
+    },
+    {
+      id: 8,
+      name: 'Project 8',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725609/Screenshot_20250728-185752_3_ejmvtj.jpg',
+    },
+    {
+      id: 9,
+      name: 'Project 9',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725608/IMG-20250728-WA0034_3_e3h9fu.jpg',
+    },
+    {
+      id: 10,
+      name: 'Project 10',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725608/IMG-20250728-WA0030_2_hkrwde.jpg',
+    },
+    {
+      id: 11,
+      name: 'Project 11',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725608/IMG-20250728-WA0029_hopcg7.jpg',
+    },
+    {
+      id: 12,
+      name: 'Project 12',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0023_ook6bl.jpg',
+    },
+    {
+      id: 13,
+      name: 'Project 13',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0024_2_htqvv5.jpg',
+    },
+    {
+      id: 14,
+      name: 'Project 14',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0026_2_zm8ijc.jpg',
+    },
+    {
+      id: 15,
+      name: 'Project 15',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/Screenshot_20250728-190708_2_mo01cy.png',
+    },
+    {
+      id: 16,
+      name: 'Project 16',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0022_oqu3mc.jpg',
+    },
+    {
+      id: 17,
+      name: 'Project 17',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/Screenshot_20250728-190818_cyejjr.png',
+    },
+    {
+      id: 18,
+      name: 'Project 18',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0013_2_tdeb3s.jpg',
+    },
+    {
+      id: 19,
+      name: 'Project 19',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725606/Screenshot_20250728-190858_ec63tg.png',
+    },
+    {
+      id: 20,
+      name: 'Project 20',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725606/IMG-20250728-WA0020_nhlpgq.jpg',
+    },
+    {
+      id: 21,
+      name: 'Project 21',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725606/Screenshot_20250728-190801_bb5gyo.png',
+    },
+    {
+      id: 22,
+      name: 'Project 22',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725605/Screenshot_20250728-190730_2_wiylm1.png',
+    },
+    {
+      id: 23,
+      name: 'Project 23',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725604/Screenshot_20250728-190912_fijoua.png',
+    },
+    {
+      id: 24,
+      name: 'Project 24',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725604/Screenshot_20250728-190650_2_jdpvhk.png',
+    },
+    {
+      id: 25,
+      name: 'Project 25',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725603/Screenshot_20250728-190837_i1oztr.png',
+    },
+    {
+      id: 26,
+      name: 'Project 26',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0004_psvl0o.jpg',
+    },
+    {
+      id: 27,
+      name: 'Project 27',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0003_ahimza.jpg',
+    },
+    {
+      id: 28,
+      name: 'Project 28',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0002_kbgj2n.jpg',
+    },
+    {
+      id: 29,
+      name: 'Project 29',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0001_2_bpqlkk.jpg',
+    },
+    {
+      id: 30,
+      name: 'Project 30',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725430/project1_3_o3h8bk.jpg',
+    },
+    {
+      id: 31,
+      name: 'Project 31',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725429/project1_2_l1bmkg.jpg',
+    },
+    {
+      id: 32,
+      name: 'Project 32',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725429/project1_1_xov9a5.jpg',
+    },
+    {
+      id: 33,
+      name: 'Project 33',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725429/project1_4_rzjimi.jpg',
+    },
+  ];
 
   // const projectImages = [
   //   project1,

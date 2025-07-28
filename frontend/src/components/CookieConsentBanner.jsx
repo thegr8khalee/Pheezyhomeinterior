@@ -58,13 +58,13 @@ const CookieConsentBanner = () => {
       <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 w-full md:w-auto">
         <button
           onClick={handleDeclineCookies}
-          className="px-4 py-2 bg-transparent border border-gray-500 rounded-lg text-sm w-full md:w-auto"
+          className="px-4 py-2 bg-transparent border border-gray-500 rounded-full text-sm w-full md:w-auto"
         >
           Decline
         </button>
         <button
           onClick={handleAcceptCookies}
-          className="px-4 py-2 bg-primary  rounded-lg text-sm hover:bg-primary-dark transition-colors duration-200 w-full md:w-auto"
+          className="px-4 py-2 bg-primary  rounded-full text-sm hover:bg-primary-dark transition-colors duration-200 w-full md:w-auto text-white"
         //   disabled={isLoggingIn} // Disable button while anonymous login is in progress
         >
           Accept All
