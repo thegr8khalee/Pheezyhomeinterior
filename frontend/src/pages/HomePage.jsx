@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Loader2 } from 'lucide-react'; // Import icons for navigation
 
 // Import your hero images
-import Hero1 from '../images/Hero1.png';
-import Hero2 from '../images/Hero2.png';
-import Hero3 from '../images/Hero3.png';
-import Hero4 from '../images/Hero4.png';
-import Hero5 from '../images/Hero5.png';
-import Hero6 from '../images/Hero6.png';
+// import Hero1 from '../images/Hero1.png';
+// import Hero2 from '../images/Hero2.png';
+// import Hero3 from '../images/Hero3.png';
+// import Hero4 from '../images/Hero4.png';
+// import Hero5 from '../images/Hero5.png';
+// import Hero6 from '../images/Hero6.png';
 import sofa from '../images/sofa.jpeg';
 import armchair from '../images/Panama-Armchair.jpg';
 import livingRoom from '../images/Livingroom.png';
@@ -36,7 +36,7 @@ import { useAuthStore } from '../store/useAuthStore';
 
 const HomePage = () => {
   // Array of hero images
-  const heroImages = [Hero1, Hero2, Hero3, Hero4, Hero5, Hero6];
+  const heroImages = ["https://res.cloudinary.com/dqe64m85c/image/upload/v1753726979/Hero1_btyphr.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726810/Hero2_txhvzy.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726811/Hero3_sdnk2c.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726811/Hero4_pxtqll.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726804/Hero5_dphmig.jpg", "https://res.cloudinary.com/dqe64m85c/image/upload/v1753726982/Hero6_o9jnqk.jpg"];
   const [currentSlide, setCurrentSlide] = useState(0); // State to track the current slide index
   const slideIntervalTime = 5000; // Time in milliseconds for automatic slide transition (5 seconds)
 
