@@ -1,6 +1,6 @@
 import React from 'react';
 // import Hero1 from '../images/Hero1.png';
-import Catalog1 from '../images/PheezCatalog.png';
+// import Catalog1 from '../images/PheezCatalog.png';
 // import Catalog2 from '../images/Catalog2.png';
 // import Catalog3 from '../images/catalog3.png';
 // import Catalog4 from '../images/Catalog4.png';
@@ -26,7 +26,7 @@ const ECatalog = () => {
             rel="noopener noreferrer"
             href="https://www.canva.com/design/DAGnWm_n-ZI/bUFkenrRw3MoNWHDKYlgRg/view?utm_content=DAGnWm_n-ZI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf0b190c6f1"
           >
-            <img src={Catalog1} alt="" className="h-full w-full" />
+            <img src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753784184/PheezCatalog_kqzhrj.png"} alt="" className="h-full w-full" />
           </a>
           {/* <a
             target="_blank"

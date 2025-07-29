@@ -5,7 +5,7 @@ import { useCartStore } from '../store/useCartStore';
 import { Loader2, Trash2, Minus, Plus, ShoppingCart, X } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { axiosInstance } from '../lib/axios.js';
-import whatsapp from '../images/whatsapp.png';
+// import whatsapp from '../images/whatsapp.png';
 // import Hero1 from '../images/Hero1.png';
 import { useAuthStore } from '../store/useAuthStore.js';
 
@@ -503,7 +503,7 @@ const CartPage = () => {
               href={whatsappCartHref(detailedCartItems)}
               disabled={isRemovingFromCart || !cart || cart.length === 0}
             >
-              <img src={whatsapp} alt="" className="size-8" /> Order On WhatsApp
+              <img src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753784180/whatsapp_4401461_ahnu6k.png"} alt="" className="size-8" /> Order On WhatsApp
             </a>
           </div>
         </div>

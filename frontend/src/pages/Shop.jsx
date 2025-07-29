@@ -19,7 +19,7 @@ import {
 // import { toast } from 'react-hot-toast';
 import FilterModal from '../components/FilterModal';
 // import Hero1 from '../images/Hero1.png'; // Assuming your hero image path
-import whatsapp from '../images/whatsapp.png'; // Assuming your whatsapp icon path
+// import whatsapp from '../images/whatsapp.png'; // Assuming your whatsapp icon path
 
 const ITEMS_PER_PAGE = 12; // Define how many items to load per click for both products and collections
 
@@ -673,7 +673,7 @@ const Shop = () => {
                                     rel="noopener noreferrer"
                                   >
                                     <img
-                                      src={whatsapp}
+                                      src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753784180/whatsapp_4401461_ahnu6k.png"}
                                       alt="WhatsApp"
                                       className="size-5"
                                     />
@@ -910,7 +910,7 @@ const Shop = () => {
                                     rel="noopener noreferrer"
                                   >
                                     <img
-                                      src={whatsapp}
+                                      src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753784180/whatsapp_4401461_ahnu6k.png"}
                                       alt="WhatsApp"
                                       className="size-5"
                                     />

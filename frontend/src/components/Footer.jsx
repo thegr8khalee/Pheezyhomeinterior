@@ -1,6 +1,6 @@
 import React from 'react';
-import whatsapp from '../images/whatsapp_4401461.png';
-import ig from '../images/ig.png';
+// import whatsapp from '../images/whatsapp_4401461.png';
+// import ig from '../images/ig.png';
 // import tiktok from '../images/tik-tok_4782345 (1).png';
 // import x from '../images/twitter_5968830.png';
 import { useNavigate } from 'react-router-dom';
@@ -97,14 +97,26 @@ const Footer = () => {
       <nav>
         <div className="grid grid-flow-col gap-4">
           <a target="_blank" rel="noopener noreferrer" href={whatsappLink}>
-            <img src={whatsapp} alt="" className="size-10" />
+            <img
+              src={
+                'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784180/whatsapp_4401461_ahnu6k.png'
+              }
+              alt=""
+              className="size-10"
+            />
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.instagram.com/pheezyhomes_interiors?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           >
-            <img src={ig} alt="" className="size-10" />
+            <img
+              src={
+                'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784195/ig_pvrgll.png'
+              }
+              alt=""
+              className="size-10"
+            />
           </a>
           {/* <a
             target="_blank"

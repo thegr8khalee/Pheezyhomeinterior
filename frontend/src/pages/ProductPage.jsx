@@ -13,7 +13,7 @@ import {
   Trash2,
 } from 'lucide-react';
 import { useProductsStore } from '../store/useProductsStore';
-import whatsapp from '../images/whatsapp.png';
+// import whatsapp from '../images/whatsapp.png';
 import { useCartStore } from '../store/useCartStore';
 import { useWishlistStore } from '../store/useWishlistStore';
 import { useAuthStore } from '../store/useAuthStore';
@@ -366,7 +366,7 @@ const ProductPage = () => {
               className="my-4 btn bg-green-500 text-base-100 w-full rounded-full font-[poppins] shadow-none border-0"
               href={whatsappHref(product)}
             >
-              <img src={whatsapp} alt="" className="size-6" />
+              <img src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753784180/whatsapp_4401461_ahnu6k.png"} alt="" className="size-6" />
               Order Now
             </a>
           ) : null}

@@ -13,7 +13,7 @@ import {
 import FilterModal from '../components/FilterModal';
 import { useProductsStore } from '../store/useProductsStore';
 // import Hero1 from '../images/Hero1.png';
-import whatsapp from '../images/whatsapp.png';
+// import whatsapp from '../images/whatsapp.png';
 import { useCollectionStore } from '../store/useCollectionStore';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useCartStore } from '../store/useCartStore';
@@ -752,7 +752,7 @@ const Styles = () => {
                                     rel="noopener noreferrer"
                                   >
                                     <img
-                                      src={whatsapp}
+                                      src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753784180/whatsapp_4401461_ahnu6k.png"}
                                       alt="WhatsApp"
                                       className="size-5"
                                     />
@@ -978,7 +978,7 @@ const Styles = () => {
                                     rel="noopener noreferrer"
                                   >
                                     <img
-                                      src={whatsapp}
+                                      src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753784180/whatsapp_4401461_ahnu6k.png"}
                                       alt="WhatsApp"
                                       className="size-5"
                                     />

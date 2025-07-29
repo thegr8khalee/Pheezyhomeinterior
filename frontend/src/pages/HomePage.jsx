@@ -9,19 +9,19 @@ import { ChevronLeft, ChevronRight, Loader2 } from 'lucide-react'; // Import ico
 // import Hero4 from '../images/Hero4.png';
 // import Hero5 from '../images/Hero5.png';
 // import Hero6 from '../images/Hero6.png';
-import sofa from '../images/sofa.jpeg';
-import armchair from '../images/Panama-Armchair.jpg';
-import livingRoom from '../images/Livingroom.png';
-import bed from '../images/Modern Bedroom design.jpeg';
-import dinign from '../images/Dining.jpeg';
-import center from '../images/center.jpeg';
-import wardrobe from '../images/wardrobe.jpeg';
-import tv from '../images/TV unit.jpeg';
-import carpet from '../images/carpets.jpeg';
-import contempoeary from '../images/contemporary.jpeg';
-import antique from '../images/antique.jpeg';
-import bespoke from '../images/bespoke.jpeg';
-import minimalist from '../images/minimalist.jpeg';
+// import sofa from '../images/sofa.jpeg';
+// import armchair from '../images/Panama-Armchair.jpg';
+// import livingRoom from '../images/Livingroom.png';
+// import bed from '../images/Modern Bedroom design.jpeg';
+// import dinign from '../images/Dining.jpeg';
+// import center from '../images/center.jpeg';
+// import wardrobe from '../images/wardrobe.jpeg';
+// import tv from '../images/TV unit.jpeg';
+// import carpet from '../images/carpets.jpeg';
+// import contempoeary from '../images/contemporary.jpeg';
+// import antique from '../images/antique.jpeg';
+// import bespoke from '../images/bespoke.jpeg';
+// import minimalist from '../images/minimalist.jpeg';
 // import kitchen from '../images/kitchen.jpeg';
 // import home from '../images/home.jpeg';
 // import office from '../images/office.jpg';
@@ -65,17 +65,48 @@ const HomePage = () => {
   }, [currentSlide]); // Re-run effect when currentSlide changes to reset timer
 
   const designs = [
-    { id: '1', name: 'Modern', link: 'modern', image: sofa },
+    {
+      id: '1',
+      name: 'Modern',
+      link: 'modern',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784168/sofa_lww1bb.jpg',
+    },
     {
       id: '2',
       name: 'Contemporary',
       link: 'contemporary',
-      image: contempoeary,
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784190/contemporary_vezfdh.jpg',
     },
-    { id: '3', name: 'Antique/Royal', link: 'antique%2Froyal', image: antique },
-    { id: '4', name: 'Bespoke', link: 'bespoke', image: bespoke },
-    { id: '5', name: 'Minimalist', link: 'minimalist', image: minimalist },
-    { id: '6', name: 'Glam', link: 'glam', image: livingRoom }, // Using Hero1 as a placeholder for now
+    {
+      id: '3',
+      name: 'Antique/Royal',
+      link: 'antique%2Froyal',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784182/antique_msdpct.jpg',
+    },
+    {
+      id: '4',
+      name: 'Bespoke',
+      link: 'bespoke',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784183/bespoke_valowk.jpg',
+    },
+    {
+      id: '5',
+      name: 'Minimalist',
+      link: 'minimalist',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784165/minimalist_rgwxgp.jpg',
+    },
+    {
+      id: '6',
+      name: 'Glam',
+      link: 'glam',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784162/Livingroom_ssrkcv.png',
+    }, // Using Hero1 as a placeholder for now
   ];
 
   //   const [uniqueCategories, setUniqueCategories] = useState([]);
@@ -95,15 +126,69 @@ const HomePage = () => {
   }, [getProducts, getCollections]);
 
   const categories = [
-    { id: '1', name: 'Sofas', link: 'Living%20Room', image: sofa },
-    { id: '2', name: 'Armchairs', link: 'Armchair', image: armchair },
-    { id: '3', name: 'Living Rooms', link: 'Living%20Room', image: livingRoom },
-    { id: '4', name: 'Bedrooms', link: 'Bedroom', image: bed },
-    { id: '5', name: 'Dining Rooms', link: 'Dining%20Room', image: dinign },
-    { id: '6', name: 'Center Tables', link: 'Center%20Table', image: center }, // Using Hero1 as a placeholder for now
-    { id: '7', name: 'Wardrobe', link: 'Wardrobe', image: wardrobe },
-    { id: '8', name: 'TV Unit', link: 'TV%20unit', image: tv },
-    { id: '9', name: 'Carpets', link: 'Carpet', image: carpet }, // Using Hero2 as a placeholder for now
+    {
+      id: '1',
+      name: 'Sofas',
+      link: 'Living%20Room',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784168/sofa_lww1bb.jpg',
+    },
+    {
+      id: '2',
+      name: 'Armchairs',
+      link: 'Armchair',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784171/Panama-Armchair_kizbg7.jpg',
+    },
+    {
+      id: '3',
+      name: 'Living Rooms',
+      link: 'Living%20Room',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784162/Livingroom_ssrkcv.png',
+    },
+    {
+      id: '4',
+      name: 'Bedrooms',
+      link: 'Bedroom',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784166/Modern_Bedroom_design_zyf9tl.jpg',
+    },
+    {
+      id: '5',
+      name: 'Dining Rooms',
+      link: 'Dining%20Room',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784166/Modern_Bedroom_design_zyf9tl.jpg',
+    },
+    {
+      id: '6',
+      name: 'Center Tables',
+      link: 'Center%20Table',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784189/center_dsigr2.jpg',
+    }, // Using Hero1 as a placeholder for now
+    {
+      id: '7',
+      name: 'Wardrobe',
+      link: 'Wardrobe',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784176/wardrobe_igtjff.jpg',
+    },
+    {
+      id: '8',
+      name: 'TV Unit',
+      link: 'TV%20unit',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784172/TV_unit_yucufm.jpg',
+    },
+    {
+      id: '9',
+      name: 'Carpets',
+      link: 'Carpet',
+      image:
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784187/carpets_bt8xqb.jpg',
+    }, // Using Hero2 as a placeholder for now
   ];
 
   const projects = [
@@ -811,7 +896,9 @@ const HomePage = () => {
             {' '}
             {/* Added bottom margin for mobile, removed for desktop */}
             <img
-              src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753727796/home_cbpusd.jpg"} // Use the imported image
+              src={
+                'https://res.cloudinary.com/dqe64m85c/image/upload/v1753727796/home_cbpusd.jpg'
+              } // Use the imported image
               alt="Luxurious Living Room"
               className="w-full h-full rounded-lg object-cover" // Added rounded corners and shadow
             />
@@ -868,7 +955,9 @@ const HomePage = () => {
           {/* 🟩 IMAGE SECTION (comes first on mobile, second on desktop) */}
           <div className="md:flex-1 h-70 lg:h-100 mb-6 md:mb-0">
             <img
-              src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753728075/0339d51a-ea31-4b76-9a8f-f56d20de75ee_exnszd.jpg"}
+              src={
+                'https://res.cloudinary.com/dqe64m85c/image/upload/v1753728075/0339d51a-ea31-4b76-9a8f-f56d20de75ee_exnszd.jpg'
+              }
               alt="Luxurious Living Room"
               className="w-full h-full rounded-lg object-cover"
             />
@@ -883,7 +972,9 @@ const HomePage = () => {
             {' '}
             {/* Added bottom margin for mobile, removed for desktop */}
             <img
-              src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753728078/From_Chaos_To_Calm__How_To_Design_A_Minimalist_sd2pdx.jpg"} // Use the imported image
+              src={
+                'https://res.cloudinary.com/dqe64m85c/image/upload/v1753728078/From_Chaos_To_Calm__How_To_Design_A_Minimalist_sd2pdx.jpg'
+              } // Use the imported image
               alt="Luxurious Living Room"
               className="w-full h-full rounded-lg object-cover" // Added rounded corners and shadow
             />
@@ -940,7 +1031,9 @@ const HomePage = () => {
           {/* 🟩 IMAGE SECTION (comes first on mobile, second on desktop) */}
           <div className="md:flex-1 h-70 lg:h-100 mb-6 md:mb-0">
             <img
-              src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753727847/carbinets_kinrvk.jpg"}
+              src={
+                'https://res.cloudinary.com/dqe64m85c/image/upload/v1753727847/carbinets_kinrvk.jpg'
+              }
               alt="Luxurious Living Room"
               className="w-full h-full rounded-lg object-cover"
             />

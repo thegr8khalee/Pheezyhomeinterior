@@ -4,8 +4,8 @@ import { Loader2 } from 'lucide-react'; // Import Loader2 for loading state
 import { toast } from 'react-hot-toast'; // Import toast for notifications
 import { axiosInstance } from '../lib/axios.js'; // Your configured Axios instance
 // import Hero1 from '../images/Hero1.png';
-import whatsapp from '../images/whatsapp_4401461.png'; // Assuming correct path
-import ig from '../images/ig.png';
+// import whatsapp from '../images/whatsapp_4401461.png'; // Assuming correct path
+// import ig from '../images/ig.png';
 // import tiktok from '../images/tik-tok_4782345 (1).png';
 // import x from '../images/twitter_5968830.png';
 import { useAuthStore } from '../store/useAuthStore.js';
@@ -214,7 +214,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
                   >
-                    <img src={whatsapp} alt="WhatsApp" className="size-10" />
+                    <img src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753784180/whatsapp_4401461_ahnu6k.png"} alt="WhatsApp" className="size-10" />
                   </a>
                   <a
                     href="https://www.instagram.com/pheezyhomes_interiors?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -222,7 +222,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     aria-label="Instagram"
                   >
-                    <img src={ig} alt="Instagram" className="size-10" />
+                    <img src={"https://res.cloudinary.com/dqe64m85c/image/upload/v1753784195/ig_pvrgll.png"} alt="Instagram" className="size-10" />
                   </a>
                   {/* <a
                     href="https://www.tiktok.com/@em_furniture_nd_interior?is_from_webapp=1&sender_device=pc"
