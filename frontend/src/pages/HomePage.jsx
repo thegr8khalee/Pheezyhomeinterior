@@ -159,7 +159,7 @@ const HomePage = () => {
       name: 'Dining Rooms',
       link: 'Dining%20Room',
       image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784166/Modern_Bedroom_design_zyf9tl.jpg',
+        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753784192/Dining_y2yemv.jpg',
     },
     {
       id: '6',

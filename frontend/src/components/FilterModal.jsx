@@ -102,14 +102,14 @@ const FilterModal = ({
               <input
                 type="number"
                 placeholder="Min Price"
-                className="input input-bordered w-1/2 rounded-md"
+                className="input input-bordered w-1/2 rounded-full"
                 value={tempMinPrice}
                 onChange={(e) => setTempMinPrice(e.target.value)}
               />
               <input
                 type="number"
                 placeholder="Max Price"
-                className="input input-bordered w-1/2 rounded-md"
+                className="input input-bordered w-1/2 rounded-full"
                 value={tempMaxPrice}
                 onChange={(e) => setTempMaxPrice(e.target.value)}
               />
@@ -162,14 +162,14 @@ const FilterModal = ({
           <button
             type="button"
             onClick={handleClear}
-            className="btn btn-ghost rounded-xl flex-1"
+            className="btn btn-ghost rounded-full flex-1"
           >
             Clear Filters
           </button>
           <button
             type="button"
             onClick={handleApply}
-            className="btn btn-primary flex-1 rounded-xl text-black"
+            className="btn btn-primary flex-1 rounded-full text-white"
           >
             Apply Filters
           </button>
