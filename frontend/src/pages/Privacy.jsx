@@ -20,9 +20,8 @@ const Privacy = () => {
       <div className="w-full justify-center flex">
         <div className="w-full space-y-2 flex flex-col p-4 max-w-7xl font-[montserrat]">
           <p className="mb-6 text-base-content">
-            This Privacy Policy describes how EM Furniture and Interior
-            collects, uses, and shares information when you use our website,
-            emfurnitureandinterior.com .
+            This Privacy Policy describes how PheezyHomesInteriors and Interior
+            collects, uses, and shares information when you use our website.
           </p>
 
           <h2 className="text-2xl font-[poppins] font-semibold mb-4">
