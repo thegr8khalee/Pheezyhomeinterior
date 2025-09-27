@@ -31,8 +31,10 @@ import toast from 'react-hot-toast';
 import { axiosInstance } from '../lib/axios';
 import { useProductsStore } from '../store/useProductsStore';
 import { useCollectionStore } from '../store/useCollectionStore';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/useAuthStore';
+import { useProjectsStore } from '../store/useProjectsStore';
+import ProjectCard from '../components/projectCard';
 
 const HomePage = () => {
   // Array of hero images
@@ -114,6 +116,11 @@ const HomePage = () => {
   const { products, getProducts, isGettingProducts } = useProductsStore();
   const { collections, getCollections, isGettingCollections } =
     useCollectionStore();
+  const {
+    fetchProjects,
+    loading: LoadingProjects,
+    projects,
+  } = useProjectsStore();
 
   const promotionProducts = products.filter((products) => products.isPromo);
 
@@ -123,7 +130,10 @@ const HomePage = () => {
   useEffect(() => {
     getProducts(1, 10, {}, false);
     getCollections(1, 10, {}, false);
-  }, [getProducts, getCollections]);
+    fetchProjects(1, 10);
+  }, [getProducts, getCollections, fetchProjects]);
+
+  console.log(projects);
 
   const categories = [
     {
@@ -191,206 +201,206 @@ const HomePage = () => {
     }, // Using Hero2 as a placeholder for now
   ];
 
-  const projects = [
-    {
-      id: 1,
-      name: 'Project 1',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725614/Screenshot_20250728-190635_2_kiu2b3.png',
-    },
-    {
-      id: 2,
-      name: 'Project 2',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725613/Screenshot_20250728-190616_2_nsuxs0.png',
-    },
-    {
-      id: 3,
-      name: 'Project 3',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725613/Screenshot_20250728-190533_2_igxzjn.png',
-    },
-    {
-      id: 4,
-      name: 'Project 4',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725611/Screenshot_20250728-190500_2_mhm33e.png',
-    },
-    {
-      id: 5,
-      name: 'Project 5',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725610/Screenshot_20250728-190436_2_mhlvtj.png',
-    },
-    {
-      id: 6,
-      name: 'Project 6',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725609/IMG-20250728-WA0032_z1ybda.jpg',
-    },
-    {
-      id: 7,
-      name: 'Project 7',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725609/Screenshot_20250728-185739_3_ugjzlk.jpg',
-    },
-    {
-      id: 8,
-      name: 'Project 8',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725609/Screenshot_20250728-185752_3_ejmvtj.jpg',
-    },
-    {
-      id: 9,
-      name: 'Project 9',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725608/IMG-20250728-WA0034_3_e3h9fu.jpg',
-    },
-    {
-      id: 10,
-      name: 'Project 10',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725608/IMG-20250728-WA0030_2_hkrwde.jpg',
-    },
-    {
-      id: 11,
-      name: 'Project 11',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725608/IMG-20250728-WA0029_hopcg7.jpg',
-    },
-    {
-      id: 12,
-      name: 'Project 12',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0023_ook6bl.jpg',
-    },
-    {
-      id: 13,
-      name: 'Project 13',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0024_2_htqvv5.jpg',
-    },
-    {
-      id: 14,
-      name: 'Project 14',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0026_2_zm8ijc.jpg',
-    },
-    {
-      id: 15,
-      name: 'Project 15',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/Screenshot_20250728-190708_2_mo01cy.png',
-    },
-    {
-      id: 16,
-      name: 'Project 16',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0022_oqu3mc.jpg',
-    },
-    {
-      id: 17,
-      name: 'Project 17',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/Screenshot_20250728-190818_cyejjr.png',
-    },
-    {
-      id: 18,
-      name: 'Project 18',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0013_2_tdeb3s.jpg',
-    },
-    {
-      id: 19,
-      name: 'Project 19',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725606/Screenshot_20250728-190858_ec63tg.png',
-    },
-    {
-      id: 20,
-      name: 'Project 20',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725606/IMG-20250728-WA0020_nhlpgq.jpg',
-    },
-    {
-      id: 21,
-      name: 'Project 21',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725606/Screenshot_20250728-190801_bb5gyo.png',
-    },
-    {
-      id: 22,
-      name: 'Project 22',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725605/Screenshot_20250728-190730_2_wiylm1.png',
-    },
-    {
-      id: 23,
-      name: 'Project 23',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725604/Screenshot_20250728-190912_fijoua.png',
-    },
-    {
-      id: 24,
-      name: 'Project 24',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725604/Screenshot_20250728-190650_2_jdpvhk.png',
-    },
-    {
-      id: 25,
-      name: 'Project 25',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725603/Screenshot_20250728-190837_i1oztr.png',
-    },
-    {
-      id: 26,
-      name: 'Project 26',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0004_psvl0o.jpg',
-    },
-    {
-      id: 27,
-      name: 'Project 27',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0003_ahimza.jpg',
-    },
-    {
-      id: 28,
-      name: 'Project 28',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0002_kbgj2n.jpg',
-    },
-    {
-      id: 29,
-      name: 'Project 29',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0001_2_bpqlkk.jpg',
-    },
-    {
-      id: 30,
-      name: 'Project 30',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725430/project1_3_o3h8bk.jpg',
-    },
-    {
-      id: 31,
-      name: 'Project 31',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725429/project1_2_l1bmkg.jpg',
-    },
-    {
-      id: 32,
-      name: 'Project 32',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725429/project1_1_xov9a5.jpg',
-    },
-    {
-      id: 33,
-      name: 'Project 33',
-      image:
-        'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725429/project1_4_rzjimi.jpg',
-    },
-  ];
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     name: 'Project 1',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725614/Screenshot_20250728-190635_2_kiu2b3.png',
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Project 2',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725613/Screenshot_20250728-190616_2_nsuxs0.png',
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Project 3',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725613/Screenshot_20250728-190533_2_igxzjn.png',
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Project 4',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725611/Screenshot_20250728-190500_2_mhm33e.png',
+  //   },
+  //   {
+  //     id: 5,
+  //     name: 'Project 5',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725610/Screenshot_20250728-190436_2_mhlvtj.png',
+  //   },
+  //   {
+  //     id: 6,
+  //     name: 'Project 6',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725609/IMG-20250728-WA0032_z1ybda.jpg',
+  //   },
+  //   {
+  //     id: 7,
+  //     name: 'Project 7',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725609/Screenshot_20250728-185739_3_ugjzlk.jpg',
+  //   },
+  //   {
+  //     id: 8,
+  //     name: 'Project 8',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725609/Screenshot_20250728-185752_3_ejmvtj.jpg',
+  //   },
+  //   {
+  //     id: 9,
+  //     name: 'Project 9',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725608/IMG-20250728-WA0034_3_e3h9fu.jpg',
+  //   },
+  //   {
+  //     id: 10,
+  //     name: 'Project 10',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725608/IMG-20250728-WA0030_2_hkrwde.jpg',
+  //   },
+  //   {
+  //     id: 11,
+  //     name: 'Project 11',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725608/IMG-20250728-WA0029_hopcg7.jpg',
+  //   },
+  //   {
+  //     id: 12,
+  //     name: 'Project 12',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0023_ook6bl.jpg',
+  //   },
+  //   {
+  //     id: 13,
+  //     name: 'Project 13',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0024_2_htqvv5.jpg',
+  //   },
+  //   {
+  //     id: 14,
+  //     name: 'Project 14',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0026_2_zm8ijc.jpg',
+  //   },
+  //   {
+  //     id: 15,
+  //     name: 'Project 15',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/Screenshot_20250728-190708_2_mo01cy.png',
+  //   },
+  //   {
+  //     id: 16,
+  //     name: 'Project 16',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0022_oqu3mc.jpg',
+  //   },
+  //   {
+  //     id: 17,
+  //     name: 'Project 17',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/Screenshot_20250728-190818_cyejjr.png',
+  //   },
+  //   {
+  //     id: 18,
+  //     name: 'Project 18',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725607/IMG-20250728-WA0013_2_tdeb3s.jpg',
+  //   },
+  //   {
+  //     id: 19,
+  //     name: 'Project 19',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725606/Screenshot_20250728-190858_ec63tg.png',
+  //   },
+  //   {
+  //     id: 20,
+  //     name: 'Project 20',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725606/IMG-20250728-WA0020_nhlpgq.jpg',
+  //   },
+  //   {
+  //     id: 21,
+  //     name: 'Project 21',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725606/Screenshot_20250728-190801_bb5gyo.png',
+  //   },
+  //   {
+  //     id: 22,
+  //     name: 'Project 22',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725605/Screenshot_20250728-190730_2_wiylm1.png',
+  //   },
+  //   {
+  //     id: 23,
+  //     name: 'Project 23',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725604/Screenshot_20250728-190912_fijoua.png',
+  //   },
+  //   {
+  //     id: 24,
+  //     name: 'Project 24',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725604/Screenshot_20250728-190650_2_jdpvhk.png',
+  //   },
+  //   {
+  //     id: 25,
+  //     name: 'Project 25',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725603/Screenshot_20250728-190837_i1oztr.png',
+  //   },
+  //   {
+  //     id: 26,
+  //     name: 'Project 26',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0004_psvl0o.jpg',
+  //   },
+  //   {
+  //     id: 27,
+  //     name: 'Project 27',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0003_ahimza.jpg',
+  //   },
+  //   {
+  //     id: 28,
+  //     name: 'Project 28',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0002_kbgj2n.jpg',
+  //   },
+  //   {
+  //     id: 29,
+  //     name: 'Project 29',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725600/IMG-20250728-WA0001_2_bpqlkk.jpg',
+  //   },
+  //   {
+  //     id: 30,
+  //     name: 'Project 30',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725430/project1_3_o3h8bk.jpg',
+  //   },
+  //   {
+  //     id: 31,
+  //     name: 'Project 31',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725429/project1_2_l1bmkg.jpg',
+  //   },
+  //   {
+  //     id: 32,
+  //     name: 'Project 32',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725429/project1_1_xov9a5.jpg',
+  //   },
+  //   {
+  //     id: 33,
+  //     name: 'Project 33',
+  //     image:
+  //       'https://res.cloudinary.com/dqe64m85c/image/upload/v1753725429/project1_4_rzjimi.jpg',
+  //   },
+  // ];
 
   // const projectImages = [
   //   project1,
@@ -538,7 +548,7 @@ const HomePage = () => {
 
   // console.log(promotionProducts);
 
-  if (isGettingProducts || isGettingCollections) {
+  if (isGettingProducts || isGettingCollections || LoadingProjects) {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <Loader2 className="h-10 w-10 animate-spin text-primary" />
@@ -615,52 +625,49 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      {/* <section className="h-25 bg-primary flex items-center justify-center space-x-7 sm:space-x-25 md:space-x-35 lg:space-x-45">
-        <div className="text-white space-y-1 text-xxs sm:text-sm font-[montserrat] items-center flex flex-col">
-          <img src={shipping} alt="" className="size-12" />
-          <h1>World Wide Shipping</h1>
-        </div>
-
-        <div className="text-white space-y-1 text-xxs font-[montserrat] items-center flex flex-col">
-          <img src={quality} alt="" className="size-12" />
-          <h1>Quality Assurance</h1>
-        </div>
-
-        <div className="text-white space-y-1 text-xxs font-[montserrat] items-center flex flex-col">
-          <img src={installation} alt="" className="size-12" />
-          <h1>Free Installation</h1>
-        </div>
-      </section> */}
-      <section className="my-10 pl-4 sm:pl-8 lg:pl-16">
-        <h2 className="text-2xl font-bold mb-4 font-[poppins]">
-          Featured Projects
-        </h2>
-        <div
-          className="flex space-x-4 overflow-x-auto pb-4"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {projects.map((category) => (
-            <div key={category.id}>
-              <button className="relative flex-shrink-0 w-70 h-100 rounded-2xl overflow-hidden shadow-md group">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                />
-              </button>
-              <div className="p-1">
-                {/* <h3 className="text-accent text-sm font-[poppins]">
-                  {category.name}
-                </h3> */}
-              </div>
+      <section className="my-10 px-4 sm:pl-8 lg:pl-16">
+        {projects.length > 0 ? ( // Correct conditional check: use ? instead of (
+          <>
+            {' '}
+            {/* Use a React Fragment to wrap multiple elements */}
+            <div className="w-full flex justify-between items-center mb-4">
+              <h2 className="text-2xl font-bold font-[poppins]">
+                Featured Projects
+              </h2>
+              <a
+                href="/projects"
+                className="font-[montserrat] text-primary font-medium"
+              >
+                View More
+              </a>
             </div>
-          ))}
-        </div>
+            <div
+              className="flex space-x-4 overflow-x-auto pb-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {/* Map over the 'projects' array. Ensure you use a unique 'key' prop. */}
+              {projects.map((project) => (
+                <ProjectCard
+                  key={project._id} // Assuming projects have a unique _id
+                  project={project}
+                />
+              ))}
+            </div>
+          </>
+        ) : null}
       </section>
-      <section className="my-10 pl-4 sm:pl-8 lg:pl-16">
-        <h2 className="text-2xl font-bold mb-4 font-[poppins]">
-          Featured Products
-        </h2>
+      <section className="my-10 px-4 sm:pl-8 lg:pl-16">
+        <div className="w-full flex justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold font-[poppins]">
+            Featured Products
+          </h2>
+          <a
+            href="/shop"
+            className="font-[montserrat] text-primary font-medium"
+          >
+            View More
+          </a>
+        </div>
         <div
           className="flex space-x-4 overflow-x-auto pb-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -803,9 +810,12 @@ const HomePage = () => {
 
       {collections.length !== 0 ? (
         <section className="pl-4 sm:pl-8 lg:pl-16">
-          <h2 className="text-2xl font-bold mb-4 font-[poppins]">
-            Collections
-          </h2>
+          <div className='w-full flex justify-between items-center mb-4'>
+              <h2 className="text-2xl font-bold font-[poppins]">
+               Collections
+              </h2>
+              <a href="/shop" className='font-[montserrat] text-primary font-medium'>View More</a>
+            </div>
           <div
             className="flex space-x-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-100"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}

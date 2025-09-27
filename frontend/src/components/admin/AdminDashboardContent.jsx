@@ -3,22 +3,27 @@ import React, { useEffect } from 'react';
 import { useProductsStore } from '../../store/useProductsStore';
 import { useCollectionStore } from '../../store/useCollectionStore';
 import { useNavigate } from 'react-router-dom';
+import { useProjectsStore } from '../../store/useProjectsStore';
 
 const AdminDashboardContent = () => {
   // In a real application, you would fetch these stats from your backend
-  const { isGettingProducts, productsCount, getProductsCount } = useProductsStore();
+  const { isGettingProducts, productsCount, getProductsCount } =
+    useProductsStore();
   const { isGettingCollections, collectionsCount, getCollectionsCount } =
     useCollectionStore();
+  const { getProjectsCount, totalCount } = useProjectsStore();
 
-    console.log(collectionsCount)
+  console.log(collectionsCount);
   useEffect(() => {
     getProductsCount();
     getCollectionsCount();
-  }, [getProductsCount, getCollectionsCount]);
+    getProjectsCount();
+  }, [getProductsCount, getCollectionsCount, getProjectsCount]);
 
   const stats = [
     { label: 'Total Products', value: productsCount },
     { label: 'Total Collections', value: collectionsCount },
+    { label: 'Total Projects', value: totalCount },
   ];
 
   const navigate = useNavigate();
@@ -30,6 +35,10 @@ const AdminDashboardContent = () => {
   const handleAddNewC = () => {
     navigate('/admin/collections/new');
   };
+
+  const handleAddNewProject = () => {
+    navigate('/admin/addproject')
+  }
 
   if (isGettingProducts || isGettingCollections) {
     // Show a loading indicator while authentication status is being determined
@@ -62,14 +71,21 @@ const AdminDashboardContent = () => {
             className="flex-4 btn btn-xl btn-outline btn-primary rounded-full text-lg"
             onClick={handleAddNew}
           >
-            Add New Product
+            Add Product
           </button>
           <button
             className="flex-4 btn btn-xl btn-outline btn-primary rounded-full text-lg"
             onClick={handleAddNewC}
           >
-            Add New Collection
+            Add Collection
           </button>
+          <button
+            className="flex-4 btn btn-xl btn-outline btn-primary rounded-full text-lg"
+            onClick={handleAddNewProject}
+          >
+            Add Project
+          </button>
+
           {/* <button className="flex-4 btn btn-xl btn-outline btn-primary rounded-full text-lg">
             View All Orders
           </button>
