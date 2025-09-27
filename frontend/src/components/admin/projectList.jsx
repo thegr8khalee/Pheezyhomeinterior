@@ -2,7 +2,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, MapPin, Tag } from 'lucide-react'; // Using MapPin and Tag icons
-import { toast } from 'react-hot-toast';
 
 // NOTE: We assume these stores exist and provide the necessary project functions
 import { useAdminStore } from '../../store/useAdminStore';
@@ -42,12 +41,7 @@ const AdminProjectListCard = ({ item }) => {
     window.confirm('Are you sure you want to delete this project?') &&
       delProject(id) // Assuming delProject is available in useAdminStore
         .then(() => {
-          toast.success('Project deleted successfully!');
           fetchProjectss({ page: 1, limit: 10 }); // Re-fetch list
-        })
-        .catch((error) => {
-          toast.error('Failed to delete project.');
-          console.error('Delete project failed:', error);
         });
   };
 
