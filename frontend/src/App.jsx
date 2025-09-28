@@ -41,6 +41,7 @@ import AdminAddProjectPage from './pages/AddProjectPage';
 import AdminEditProjectPage from './pages/EditProjectPage';
 import Projects from './pages/Projects';
 import ProjectDetailPage from './pages/ProjectDetailPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const { checkAuth, authUser, isAdmin, isAuthReady } = useAuthStore();
@@ -66,6 +67,7 @@ function App() {
   // console.log('Collections', collections);
   return (
     <div className="max-h-screen">
+      <ScrollToTop />
       <Navbar />
       <BottomNavbar />
       {/* {!authUser && 

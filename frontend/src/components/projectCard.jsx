@@ -17,7 +17,7 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className="relative flex-shrink-0 w-full max-h-100">
+    <div className="relative flex-shrink-0 aspect-[14/16] w-full rounded-2xl overflow-hidden shadow-lg">
       <button
         className="relative w-full h-full rounded-2xl overflow-hidden shadow-md group cursor-pointer"
         onClick={handleCardClick}

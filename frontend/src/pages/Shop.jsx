@@ -212,17 +212,17 @@ const Shop = () => {
 
   // Effect for Product Filters & Initial Product Load - ONLY run if auth is ready
   useEffect(() => {
-    if (isAuthReady) {
+    if (isAuthReady && products.length === 0) {
       setLocalPageProduct(1); // Reset page to 1 for new filter set
       const filters = buildProductFilters();
       // Fetch first page with current filters, replacing existing products
       getProducts(1, ITEMS_PER_PAGE, filters, false);
     }
-  }, [isAuthReady, buildProductFilters, getProducts]); // Depend on isAuthReady, buildProductFilters, and getProducts
+  }, [isAuthReady, buildProductFilters, getProducts, products.length]); // Depend on isAuthReady, buildProductFilters, and getProducts
 
   // Effect for Collection Filters & Initial Collection Load - ONLY run if auth is ready
   useEffect(() => {
-    if (isAuthReady) {
+    if (isAuthReady && collections.length === 0) {
       setLocalPageCollection(1); // Reset page to 1 for new filter set
       const filters = buildCollectionFilters();
       // Fetch first page with current filters, replacing existing collections

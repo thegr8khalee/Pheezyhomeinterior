@@ -201,6 +201,15 @@ const Navbar = () => {
                   E-Catalogs
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/projects"
+                  className="btn btn-lg font-normal border-0 justify-start"
+                  onClick={closeDrawer}
+                >
+                  Projects
+                </Link>
+              </li>
               {/* <li>
                 <Link
                   to="/showroom"
@@ -306,6 +315,9 @@ const Navbar = () => {
           </Link>
           <Link to="/e-catalog" className=" border-0 shadow-none btn-ghost">
             E-Catalog
+          </Link>
+          <Link to="/projects" className=" border-0 shadow-none btn-ghost">
+            Projects
           </Link>
           {/* <Link to="/showroom" className=" border-0 shadow-none btn-ghost">
             Showroom

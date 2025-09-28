@@ -128,10 +128,23 @@ const HomePage = () => {
 
   //   console.log(promotionProducts);
   useEffect(() => {
-    getProducts(1, 10, {}, false);
-    getCollections(1, 10, {}, false);
-    fetchProjects(1, 10);
-  }, [getProducts, getCollections, fetchProjects]);
+    if (products.length === 0) {
+      getProducts(1, 10, {}, false);
+    }
+    if (collections.length === 0) {
+      getCollections(1, 10, {}, false);
+    }
+    if (projects.length === 0) {
+      fetchProjects(1, 10);
+    }
+  }, [
+    getProducts,
+    getCollections,
+    fetchProjects,
+    products.length,
+    collections.length,
+    projects.length,
+  ]);
 
   console.log(projects);
 
@@ -810,12 +823,15 @@ const HomePage = () => {
 
       {collections.length !== 0 ? (
         <section className="pl-4 sm:pl-8 lg:pl-16">
-          <div className='w-full flex justify-between items-center mb-4'>
-              <h2 className="text-2xl font-bold font-[poppins]">
-               Collections
-              </h2>
-              <a href="/shop" className='font-[montserrat] text-primary font-medium'>View More</a>
-            </div>
+          <div className="w-full flex justify-between items-center mb-4">
+            <h2 className="text-2xl font-bold font-[poppins]">Collections</h2>
+            <a
+              href="/shop"
+              className="font-[montserrat] text-primary font-medium"
+            >
+              View More
+            </a>
+          </div>
           <div
             className="flex space-x-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-100"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}

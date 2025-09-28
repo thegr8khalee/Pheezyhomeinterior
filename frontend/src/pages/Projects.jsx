@@ -11,8 +11,10 @@ const Projects = () => {
   } = useProjectsStore();
 
   useEffect(() => {
-    fetchProjects(1, 20);
-  }, [fetchProjects]);
+    if (projects.length === 0) {
+      fetchProjects(1, 20);
+    }
+  }, [fetchProjects, projects.length]);
 
   if (LoadingProjects) {
     return (
@@ -38,23 +40,18 @@ const Projects = () => {
           </h1>
         </div>
       </div>
-      <section className="my-8 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <section className="my-8 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
         {projects.length > 0 ? ( // Correct conditional check: use ? instead of (
           <>
             {' '}
             {/* Use a React Fragment to wrap multiple elements */}
-            <div
-              className="flex space-x-4 overflow-x-auto pb-4"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {/* Map over the 'projects' array. Ensure you use a unique 'key' prop. */}
-              {projects.map((project) => (
-                <ProjectCard
-                  key={project._id} // Assuming projects have a unique _id
-                  project={project}
-                />
-              ))}
-            </div>
+            {/* Map over the 'projects' array. Ensure you use a unique 'key' prop. */}
+            {projects.map((project) => (
+              <ProjectCard
+                key={project._id} // Assuming projects have a unique _id
+                project={project}
+              />
+            ))}
           </>
         ) : null}
       </section>
