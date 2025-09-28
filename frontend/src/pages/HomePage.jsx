@@ -35,6 +35,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/useAuthStore';
 import { useProjectsStore } from '../store/useProjectsStore';
 import ProjectCard from '../components/projectCard';
+import ProjectCardHome from '../components/ProjectCardHome';
 
 const HomePage = () => {
   // Array of hero images
@@ -660,7 +661,7 @@ const HomePage = () => {
             >
               {/* Map over the 'projects' array. Ensure you use a unique 'key' prop. */}
               {projects.map((project) => (
-                <ProjectCard
+                <ProjectCardHome
                   key={project._id} // Assuming projects have a unique _id
                   project={project}
                 />

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Info } from 'lucide-react';
 
-const ProjectCard = ({ project }) => {
+const ProjectCardHome = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [showMobileDetails, setShowMobileDetails] = useState(false);
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className={`relative flex-shrink-0 aspect-[14/16] w-full rounded-2xl overflow-hidden shadow-lg`}>
+    <div className={`relative flex-shrink-0 aspect-[14/16] w-90 rounded-2xl overflow-hidden shadow-lg`}>
       <button
         className="relative w-full h-full rounded-2xl overflow-hidden shadow-md group cursor-pointer"
         onClick={handleCardClick}
@@ -124,4 +124,4 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-export default ProjectCard;
+export default ProjectCardHome;
