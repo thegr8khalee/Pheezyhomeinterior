@@ -1,8 +1,8 @@
-// backend/controllers/contactController.js
-import nodemailer from 'nodemailer';
+// backend/controllers/contact.controller.js
 import dotenv from 'dotenv';
+import { sendEmail } from '../services/gmail.service.js';
 
-dotenv.config(); // Load environment variables
+dotenv.config();
 
 /**
  * @desc    Send a contact form email
@@ -19,46 +19,48 @@ export const sendContactEmail = async (req, res) => {
     return res.status(400).json({ message: 'All fields are required.' });
   }
 
-  // 2. Configure Nodemailer transporter
-  // Use your email service provider's SMTP settings.
-  // Example for Gmail (less secure app access must be enabled or use App Passwords):
-  // For production, consider a dedicated email service like SendGrid, Mailgun, AWS SES.
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: process.env.SMTP_PORT || 465,
-    secure: (process.env.SMTP_PORT || 465) == 465,
+  // 2. Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ message: 'Invalid email address.' });
+  }
 
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-    connectionTimeout: 60000, // 60 seconds
-    socketTimeout: 60000, // 60 seconds
-  });
+  // 3. Create email content (keeping your original format)
+  const textContent = `
+Name: ${name}
+Email: ${email}
+Phone Number: ${phoneNumber}
+Subject: ${subject}
 
-  // 3. Define email options
-  const mailOptions = {
-    from: `"${name}" <${email}>`, // Sender's name and email
-    to: process.env.RECEIVING_EMAIL, // The email address where you want to receive messages
-    subject: `Contact Form: ${subject}`,
-    html: `
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone Number:</strong> ${phoneNumber}</p>
-            <p><strong>Subject:</strong> ${subject}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message.replace(/\n/g, '<br>')}</p>
-        `,
-  };
+Message:
+${message}
+  `;
 
-  // 4. Send the email
+  const htmlContent = `
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone Number:</strong> ${phoneNumber}</p>
+    <p><strong>Subject:</strong> ${subject}</p>
+    <p><strong>Message:</strong></p>
+    <p>${message.replace(/\n/g, '<br>')}</p>
+  `;
+
+  // 4. Send the email using Gmail API
   try {
-    await transporter.sendMail(mailOptions);
+    const result = await sendEmail({
+      to: 'pheezyhomesinteriors@gmail.com',
+      subject: `Contact Form: ${subject}`,
+      text: textContent,
+      html: htmlContent,
+      from: `"${name}" <pheezyhomesinteriors@gmail.com>`,
+    });
+
+    console.log('✅ Contact email sent successfully:', result.messageId);
     res.status(200).json({ message: 'Message sent successfully!' });
   } catch (error) {
-    console.error('Error sending contact email:', error);
-    res
-      .status(500)
-      .json({ message: 'Failed to send message. Please try again later.' });
+    console.error('❌ Error sending contact email:', error);
+    res.status(500).json({
+      message: 'Failed to send message. Please try again later.'
+    });
   }
 };
